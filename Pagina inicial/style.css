@@ -5,8 +5,12 @@
     /*======== Colors ========*/
     /*Color mode HSL(ahue, saturation, lightness)*/
     --cor-primaria: green;
+    --cor-secundaria: #;
+    --cor-branca: white;
+    --cor-preta: black;
     --cor-titulo: darkgreen;
     --texto-cor: rgb(4, 32, 1);
+    --cor-botao: #;
     --contain-cor: hsl(0, 0%, 100%);
     --body-cor: rgb(231, 248, 231);
 
@@ -23,6 +27,7 @@
 @media screen and (min-width: 1120px){
     :root{
         --h2-font-size: 2.5rem;
+        --font-header: 1.2rem;
         --smal-font-size: .875rem;
     }
 }
@@ -47,11 +52,11 @@ img{
 }
 /*==================== Header ====================*/
 header {
-    position: fixed;
     background-color: antiquewhite;
-    opacity: 0.7;
+    backdrop-filter: blur(20px);
+    opacity: 0.5;
+    padding: 5px;
     width: 100%;
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,12 +72,14 @@ li > a {
     color: green;
     text-decoration: none;
     font-family: var(--h2-font);
-    font-size: var(--h2-font-zise);
+    font-size: var(--font-header);
     animation: alternate 1s forwards;
     transition: 0.7s;
     padding: 10px 15px;
     border-radius: 10px;
 }
+
+
 
 li > a:hover {
     background-color: green;
@@ -112,7 +119,7 @@ li > a:hover {
 .card__container{
     display: grid;
     row-gap: 3.5rem;
-    gap: 8rem;
+    gap: 7rem;
 }
 
 .card__article{
@@ -378,6 +385,6 @@ li > a:hover {
 /*For medium devices*/
 @media screen and (min-width: 640px){
     .avalidor__swiper{
-        max-width: 64;
+        max-width: 640px;
     }
 }

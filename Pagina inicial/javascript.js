@@ -9,9 +9,9 @@ const swiperAvaliacoes = new Swiper('.avaliador__swiper', {
   speed: 600,
   effect: 'coverflow',
   coverflowEffect: {
-    rotate:-90,
-    depth: 2000,
-    modifier: .7,
+    rotate:-5,
+    depth: 200,
+    modifier: .5,
     slideShadows: false,
   },
 

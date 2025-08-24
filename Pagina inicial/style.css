@@ -112,9 +112,11 @@ li > a:hover::after{
 }
 
 .logo {
-    background-color: var(--cor-primaria);
-    width: 70px;
-    height: 70px;
+    background-image: url('../img/Logo.png');
+    background-size: contain; /* Mantenha o tamanho proporcional */
+    background-repeat: no-repeat;
+    width: 200px; /* Aumente a largura */
+    height: 100px; /* Aumente a altura */
     border-radius: 50%;
 }
 

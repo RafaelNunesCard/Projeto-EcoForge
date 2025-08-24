@@ -42,21 +42,15 @@
 
 body {
     font-family: 'Opens-Sans';
-    background: linear-gradient(135deg , rgb(190, 248, 190) , rgb(31, 141, 31));
+    background-color: var(--padrao-font);
     color: var(--texto-cor);
     padding: 0; /* Adicionado */
 }
 
-h1{
-    font-family: var(--titulo-font);
-}
-
-h2{
-    font-family: var(--h2-font);
-}
-
-p{
-    font-family: var(--padrao-font);
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 /*==================== Header ====================*/
 header {
@@ -69,7 +63,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 10000;
-    background-color: rgba(240, 239, 239, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
 }
 
@@ -118,8 +112,16 @@ li > a:hover::after{
 }
 
 .logo {
-    background-color: var(--cor-primaria);
-    width: 70px;
-    height: 70px;
+    background-image: url('../img/Logo.png');
+    background-size: contain; /* Mantenha o tamanho proporcional */
+    background-repeat: no-repeat;
+    width: 200px; /* Aumente a largura */
+    height: 100px; /* Aumente a altura */
     border-radius: 50%;
+}
+
+/*==================== Banner ====================*/
+
+.banner_impressora{
+    
 }

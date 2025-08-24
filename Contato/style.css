@@ -1,0 +1,312 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*==================== Variaveis CSS ====================*/
+:root{
+    /*======== Colors ========*/
+    /*Color mode HSL(ahue, saturation, lightness)*/
+    --cor-primaria: #249E20;
+    --cor-secundaria: #599E1F;
+    --cor-terciaria: #8D9E20;
+    --cor-branca: white;
+    --cor-preta: black;
+    --cor-titulo: darkgreen;
+    --texto-cor: rgb(4, 32, 1);
+    --cor-botao: #;
+    --contain-cor: hsl(0, 0%, 100%);
+    --body-cor: rgb(231, 248, 231);
+
+    /*======== Fontes e Tipografia ========*/
+    /*0.5rem = 8px / 1rem = 16px...*/
+    --padrao-font: Arial;
+    --h2-font:'Poppins';
+    --titulo-font: 'montserrat';
+    --h2-font-zise: 1.45rem;
+    --small-font-size: .813rem;
+}
+
+/*==================== Tipografia Resposiva ====================*/
+@media screen and (min-width: 1120px){
+    :root{
+        --h2-font-size: 2.5rem;
+        --font-header: 1.2rem;
+        --smal-font-size: .875rem;
+    }
+}
+
+/*==================== Base ====================*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Opens-Sans';
+    background: linear-gradient(135deg , rgb(190, 248, 190) , rgb(31, 141, 31));
+    color: var(--texto-cor);
+    padding: 0; /* Adicionado */
+}
+
+h1{
+    font-family: var(--titulo-font);
+}
+
+h2{
+    font-family: var(--h2-font);
+}
+
+p{
+    font-family: var(--padrao-font);
+}
+/*==================== Header ====================*/
+header {
+    position: fixed;
+    padding: 5px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    background-color: rgba(240, 239, 239, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+nav > ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+li > a {
+    color: transparent;
+    background: linear-gradient(to right, var(--cor-primaria) , var(--cor-secundaria));
+    background-clip: text;
+    text-decoration: none;
+    font-family: var(--h2-font);
+    font-size: var(--font-header);
+    font-weight: bold;
+    padding: 10px 20px;
+    position: relative;
+}
+
+
+
+li > a::after{
+    content: '';
+    position: absolute;
+    transition: 0.3s;
+    background: linear-gradient(to right, var(--cor-primaria) , var(--cor-terciaria));
+    border-radius: 2px;
+    height: 4px;
+    width: 0%;
+    bottom: 0;
+    left: 10px;
+}
+
+li > a:hover::after{
+    width: 90%;
+}
+
+/*========Logo========*/
+
+#logo-header {
+    display: inline-block;
+    align-items: center;
+}
+
+.logo {
+    background-color: var(--cor-primaria);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+/*Contato*/
+#Contato{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100vh;
+}
+
+#separador_do_text{
+    width: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#text_contato{
+    background-color: transparent;
+    width: 70%;
+    border-radius: 20px;
+    padding: 4rem;
+    color: rgb(0, 2, 24);
+}
+
+#text_contato > h1{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.email{
+    width: 70%;
+    height: 10vh;
+
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.email > i{
+    margin-right: 1rem;
+    margin-left: 8px;
+    padding: 4px 6px;
+    font-size: 3rem;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+}
+.email:hover i{
+    visibility: hidden;
+}
+
+#descri__email > a{
+    text-decoration: none;
+    color: rgb(0, 70, 0);
+}
+
+#descri__email > a:hover{
+    text-decoration: underline;
+    color: green;
+}
+
+.social_midia{
+    display: flex;
+    gap: 37px;
+    margin-top: 20px;
+}
+
+.redes {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    aspect-ratio: 1;
+    font-size: 1.9rem;
+    color: #7a7a7a;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    transition: color 0.5s ease-in-out;
+}
+
+.redes:hover{
+    color: rgb(56, 83, 15);
+}
+
+/*========================== Comentario ==========================*/
+
+main{
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    #form_contato{
+        width: 450px;
+        background-color: white;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: -10px -10px -10px white;
+    }
+
+    .form{
+        padding: 20px;
+    }
+
+    .form-control{
+        margin-bottom: 10px;
+        padding-bottom: 20px;
+        position: relative;
+    }
+
+    .form-control label{
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    .form-control input{
+        border: 2px solid var(--cor-primaria);
+        display: block;
+        border-radius: 10px;
+        font-size: 14px;
+        width: 100%;
+        padding: 10px;
+    }
+
+
+    .form-control small{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        visibility: hidden;
+    }
+
+    .form button{
+        background-color: green;
+        border: transparent;
+        border-radius: 7px;
+        font-size: 14px;
+        color: white;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .form button:hover{
+        background-color: darkgreen;
+    }
+
+    .control-genero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-bottom: 15px;
+    }
+
+    .control-genero label{
+        margin-left: 12%;
+        margin-right: 12%;
+    }
+
+    #comentario{
+        border: 3px solid var(--cor-primaria);
+        width: 100%;
+        height: 14vh;
+        resize: none;
+        border-radius: 5px;
+    }
+
+    #resetar{
+        position: absolute;
+        top: 10;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+
+    #enviar{
+        box-shadow: 0px 9px 12px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+    }

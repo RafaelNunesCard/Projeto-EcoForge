@@ -4,13 +4,14 @@
 :root{
     /*======== Colors ========*/
     /*Color mode HSL(ahue, saturation, lightness)*/
-    --cor-primaria: #249E20;
-    --cor-secundaria: #599E1F;
-    --cor-terciaria: #8D9E20;
+    --cor-primaria: #026873;
+    --cor-secundaria: #025940;
+    --cor-terciaria: #03A64A;
+    --hover-primaria:#004e57;
     --cor-branca: white;
     --cor-preta: black;
-    --cor-titulo: darkgreen;
-    --texto-cor: rgb(4, 32, 1);
+    --cor-titulo: rgb(59, 158, 59);
+    --texto-cor: rgb(117, 131, 141);
     --cor-botao: #;
     --contain-cor: hsl(0, 0%, 100%);
     --body-cor: rgb(231, 248, 231);
@@ -42,7 +43,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg , rgb(190, 248, 190) , rgb(31, 141, 31));
+    background: linear-gradient(135deg , var(--cor-terciaria) , var(--cor-secundaria),  var(--cor-primaria));
     color: var(--texto-cor);
     padding: 0; /* Adicionado */
 }
@@ -149,7 +150,7 @@ li > a:hover::after{
     width: 70%;
     border-radius: 20px;
     padding: 4rem;
-    color: rgb(0, 2, 24);
+    color: var(--cor-branca);
 }
 
 #text_contato > h1{
@@ -161,19 +162,42 @@ li > a:hover::after{
     width: 70%;
     height: 10vh;
 
+    position: relative;
     margin-top: 1rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: white;
     border-radius: 20px;
 }
+
+.email::after,.email::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: conic-gradient(
+            from var(--deg) at center,
+            rgb(10, 196, 124),
+            rgb(36, 187, 36),
+            rgb(20, 94, 190)
+        );
+        border-radius: inherit;
+        z-index: -2;
+        padding: 1px;
+        animation: autoRotate 2s linear infinite;
+    }
+
+    .email::after{
+        filter: blur(10px);
+    }
 
 .email > i{
     margin-right: 1rem;
     margin-left: 8px;
     padding: 4px 6px;
     font-size: 3rem;
-    background-color: rgb(228, 228, 228);
+    background-color: var(--cor-primaria);
     border-radius: 10px;
     transition: 0.5s ease-in-out;
 }
@@ -181,14 +205,18 @@ li > a:hover::after{
     visibility: hidden;
 }
 
+#descri__email > h3{
+    color: #002e33;
+}
+
 #descri__email > a{
     text-decoration: none;
-    color: rgb(0, 70, 0);
+    color: var(--cor-secundaria);
 }
 
 #descri__email > a:hover{
     text-decoration: underline;
-    color: green;
+    color: var(--cor-primaria);
 }
 
 .social_midia{
@@ -212,7 +240,7 @@ li > a:hover::after{
 }
 
 .redes:hover{
-    color: rgb(56, 83, 15);
+    color: var(--cor-primaria);
 }
 
 /*========================== Comentario ==========================*/
@@ -224,11 +252,47 @@ main{
 
     #form_contato{
         width: 450px;
+        position: relative;
         background-color: white;
-        border-radius: 20px;
+        color: #002e33;
+        border-radius: 10px;
         padding: 20px;
-        box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
-        box-shadow: -10px -10px -10px white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @property --deg{
+        syntax: '<angle>';
+        inherits: true;
+        initial-value: 0deg;
+    }
+
+    #form_contato::after,#form_contato::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: conic-gradient(
+            from var(--deg) at center,
+            rgb(10, 196, 124),
+            rgb(36, 187, 36),
+            rgb(20, 94, 190)
+        );
+        border-radius: inherit;
+        z-index: -2;
+        padding: 3px;
+        animation: autoRotate 2s linear infinite;
+    }
+
+    #form_contato::after{
+        filter: blur(20px);
+    }
+
+    @keyframes autoRotate{
+        to{
+            --deg: 360deg;
+        }
     }
 
     .form{
@@ -264,7 +328,7 @@ main{
     }
 
     .form button{
-        background-color: green;
+        background-color: var(--cor-primaria);
         border: transparent;
         border-radius: 7px;
         font-size: 14px;
@@ -274,20 +338,7 @@ main{
     }
 
     .form button:hover{
-        background-color: darkgreen;
-    }
-
-    .control-genero {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-        padding-bottom: 15px;
-    }
-
-    .control-genero label{
-        margin-left: 12%;
-        margin-right: 12%;
+        background-color: var(--hover-primaria);
     }
 
     #comentario{

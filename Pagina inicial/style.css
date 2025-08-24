@@ -4,14 +4,15 @@
 :root{
     /*======== Colors ========*/
     /*Color mode HSL(ahue, saturation, lightness)*/
-    --cor-primaria: #249E20;
-    --cor-secundaria: #599E1F;
-    --cor-terciaria: #8D9E20;
+    --cor-primaria: #026873;
+    --cor-secundaria: #025940;
+    --cor-terciaria: #03A64A;
+    --hover-primaria:#004e57;
     --cor-branca: white;
     --cor-preta: black;
-    --cor-titulo: darkgreen;
-    --texto-cor: rgb(4, 32, 1);
-    --cor-botao: #;
+    --cor-titulo: rgb(59, 158, 59);
+    --texto-cor: #00353b;
+    --cor-botao: #026873;
     --contain-cor: hsl(0, 0%, 100%);
     --body-cor: rgb(231, 248, 231);
 
@@ -22,6 +23,13 @@
     --titulo-font: 'montserrat';
     --h2-font-zise: 1.45rem;
     --small-font-size: .813rem;
+
+    /*======== Cor Grafico ========*/
+
+    --c1: #249e20;
+    --c2: rgb(89, 92, 88);
+    --c3: #fc921f;
+    --c4: #389ca0;
 }
 
 /*==================== Tipografia Resposiva ====================*/
@@ -41,8 +49,8 @@
 }
 
 body {
-    font-family: 'Opens-Sans';
-    background-color: var(--padrao-font);
+    font-family: var(--padrao-font);
+    background-color: var(--cor-branca);
     color: var(--texto-cor);
     padding: 0; /* Adicionado */
 }
@@ -76,7 +84,7 @@ nav > ul {
 
 li > a {
     color: transparent;
-    background: linear-gradient(to right, var(--cor-primaria) , var(--cor-secundaria));
+    background: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
     background-clip: text;
     text-decoration: none;
     font-family: var(--h2-font);
@@ -86,13 +94,11 @@ li > a {
     position: relative;
 }
 
-
-
-li > a::after{
+li > a::after {
     content: '';
     position: absolute;
     transition: 0.3s;
-    background: linear-gradient(to right, var(--cor-primaria) , var(--cor-terciaria));
+    background: linear-gradient(to right, var(--cor-primaria), var(--cor-terciaria));
     border-radius: 2px;
     height: 4px;
     width: 0%;
@@ -100,7 +106,7 @@ li > a::after{
     left: 10px;
 }
 
-li > a:hover::after{
+li > a:hover::after {
     width: 90%;
 }
 
@@ -113,11 +119,44 @@ li > a:hover::after{
 
 .logo {
     background-image: url('../img/Logo.png');
-    background-size: contain; /* Mantenha o tamanho proporcional */
+    background-size: contain; 
     background-repeat: no-repeat;
-    width: 200px; /* Aumente a largura */
-    height: 100px; /* Aumente a altura */
+    width: 200px; 
+    height: 100px; 
     border-radius: 50%;
+}
+
+/*==================== Breakpoints ====================*/
+
+/* Para dispositivos pequenos */
+@media (max-width: 600px) {
+    nav > ul {
+        flex-direction: column; /* Muda para coluna em telas pequenas */
+        align-items: center; /* Centraliza os itens */
+        padding: 10px; /* Ajusta o padding */
+    }
+
+    li > a {
+        padding: 8px 15px; /* Reduz o padding em telas pequenas */
+        font-size: 1.2rem; /* Reduz o tamanho da fonte */
+    }
+
+    .logo {
+        width: 150px; /* Reduz a largura do logo */
+        height: 75px; /* Reduz a altura do logo */
+    }
+}
+
+/* Para dispositivos médios */
+@media (min-width: 601px) and (max-width: 900px) {
+    li > a {
+        font-size: 1.5rem; /* Ajusta o tamanho da fonte */
+    }
+}
+
+/* Para dispositivos grandes */
+@media (min-width: 901px) {
+    /* Estilos padrão já definidos, caso necessário */
 }
 
 /*==================== Banner Impactante ====================*/
@@ -217,64 +256,112 @@ li > a:hover::after{
     background-size: cover;
 }
 
+/*==================== Breakpoints ====================*/
+
+/* Para dispositivos pequenos */
+@media (max-width: 600px) {
+    #Separador_do_texto,
+    #Separador_da_imagem {
+        width: 100%; /* Largura total em telas pequenas */
+        height: auto; /* Altura automática */
+    }
+
+    #text__banner > h1 {
+        font-size: 4rem; /* Reduzido para telas pequenas */
+    }
+
+    #text__banner > h2 {
+        font-size: 2.5rem; /* Reduzido para telas pequenas */
+    }
+
+    #part2__text__banner > h2 {
+        margin-left: 20px; /* Ajustado para centralização */
+        font-size: 1.5rem; /* Tamanho reduzido */
+    }
+
+    #part2__text__banner > p {
+        font-size: 1rem; /* Reduzido para telas pequenas */
+    }
+}
+
+/* Para dispositivos médios */
+@media (min-width: 601px) and (max-width: 900px) {
+    #Separador_do_texto,
+    #Separador_da_imagem {
+        width: 75%; /* Largura ajustada para telas médias */
+    }
+
+    #text__banner > h1 {
+        font-size: 5rem; /* Reduzido para telas médias */
+    }
+
+    #text__banner > h2 {
+        font-size: 3rem; /* Reduzido para telas médias */
+    }
+}
+
+/* Para dispositivos grandes */
+@media (min-width: 901px) {
+    #Separador_do_texto,
+    #Separador_da_imagem {
+        width: 50%; /* Largura padrão em telas grandes */
+    }
+}
+
 
 /*==================== Resumo-dos-Problemas ====================*/
-#resumo__problema{
+#resumo__problema {
     width: 100%;
-    height: 120vh;
+    height: auto; /* Alterado para auto para melhor responsividade */
     background: var(--cor-primaria);
     text-align: center;
     color: white;
 }
 
-#resumo__problema > h1{
+#resumo__problema > h1 {
     font-family: var(--titulo-font);
     padding-top: 2rem;
     font-size: 3rem;
 }
 
-#Problemas{
-    padding: 8rem;
-    gap: 30px;
-    column-gap: 30px;
+#Problemas {
+    padding: 8rem 6rem; 
+    gap: 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-content: center;
 }
 
-.problema{
+.problema {
     text-align: left;
-    width: 25vw;
-    height: 44vh;
+    width: 100%; /* Alterado para 100% para responsividade */
+    max-width: 400px; /* Definido um limite máximo de largura */
+    height: auto; /* Alterado para auto */
     padding: 40px;
-    padding-left: 10px;
     background: var(--cor-branca);
     color: black;
     border: 5px ridge white;
     border-radius: 10px;
     position: relative;
-    gap: 10px;
     box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
-    box-shadow: -10px -10px -10px white;
-    object-fit: cover;
     transform-style: preserve-3d;
     cursor: pointer;
     transition: transform 0.5s ease;
 }
 
-.problema:hover{
+.problema:hover {
     transform: rotateX(5deg) rotateY(5deg) scale(1.05);
     box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.problema::after{
+.problema::after {
     content: '';
     position: absolute;
-    background: linear-gradient(135deg , white, #f9f9f9);
+    background: linear-gradient(135deg, white, #f9f9f9);
 }
 
-.problema > i{
+.problema > i {
     display: flex;
     align-items: center;
     font-size: 3rem;
@@ -283,18 +370,18 @@ li > a:hover::after{
     color: transparent;
 }
 
-.text_problema > h1{
+.text_problema > h1 {
     font-family: var(--titulo-font);
     padding-bottom: 7px;
     font-size: 2rem;
 }
 
-.text_problema > p{
+.text_problema > p {
     font-family: var(--padrao-font);
     font-size: 1.2rem;
 }
 
-.text_problema button{
+.text_problema button {
     width: 100px;
     height: 40px;
     color: white;
@@ -302,37 +389,59 @@ li > a:hover::after{
     opacity: 0;
     border: 5px solid var(--cor-primaria);
     font-weight: bold;
-    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     margin-top: 15px;
     transition: 1s;
 }
 
-
 .problema:hover .text_problema button {
     opacity: 1;
 }
 
-
-
-
-
-
 /*==================== Breakpoints ====================*/
-/*For small devices*/
 
+/* Para dispositivos pequenos */
+@media (max-width: 600px) {
+    #Problemas {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+        padding: 4rem 1rem; /* Ajuste de padding */
+    }
 
+    .problema {
+        width: 90%; /* Largura maior em telas pequenas */
+        margin: 0 auto; /* Centraliza o card */
+        padding: 20px; /* Ajuste no padding */
+    }
 
-/*For medium devices*/
+    .text_problema > h1 {
+        font-size: 1.5rem; /* Reduz tamanho do título */
+    }
 
+    .text_problema > p {
+        font-size: 1rem; /* Reduz tamanho do texto */
+    }
+}
 
+/* Para dispositivos médios */
+@media (min-width: 601px) and (max-width: 900px) {
+    #Problemas {
+        grid-template-columns: repeat(1, 1fr); /* Duas colunas em telas médias */
+    }
 
-/*For large devices*/
+    .problema {
+        width: 80%; /* Largura maior em telas médias */
+    }
+}
 
-
+/* Para dispositivos grandes */
+@media (min-width: 901px) {
+    #Problemas {
+        grid-template-columns: repeat(3, 1fr); /* Três colunas em telas grandes */
+    }
+}
 /*==================== Avaliações ====================*/
 .avaliacoes{
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -344,6 +453,7 @@ li > a:hover::after{
     max-width: 1120px;
     margin-inline: 1.5rem;
     padding-bottom: 7rem;
+
 }
 
 .avaliacoes__titulo{
@@ -360,6 +470,7 @@ li > a:hover::after{
     padding: 2rem 1.5rem 3rem;
     border-radius: 1.5rem;
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .avaliador__img{
@@ -429,7 +540,7 @@ li > a:hover::after{
     background-color: var(--cor-primaria);
     color: white;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 /*==================== Breakpoints ====================*/
@@ -472,3 +583,127 @@ li > a:hover::after{
         font-size: var(--padrao-font);
     }
 }
+
+/*==================== Graficos do lixo do mundo ====================*/
+
+
+#lixo__mundo {
+    height: auto; 
+    margin-top: 7rem;
+    text-align: center;
+    background-color: var(--cor-branca);
+}
+
+#lixo__mundo > h1 {
+    font-size: 3rem;
+    padding: 2rem 0;
+}
+
+#lixo__mundo > h2 {
+    font-size: 2.2rem;
+    margin: 2rem 0;
+}
+
+.container_grafico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem 1rem;
+}
+
+.charts {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pie {
+    min-width: 295px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+
+    radial-gradient(circle,
+        white 40%, 
+        transparent 0 70%, 
+        white 100%
+
+    ), 
+    conic-gradient(from 30deg, 
+        var(--c1) 40%, 
+        var(--c2) 0 65%, 
+        var(--c3) 0 85%, 
+        var(--c4) 0%
+
+    );
+}
+
+.legends {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    gap: 1rem;
+}
+
+.legends span {
+    position: relative;
+    padding-inline-start: 1.25rem;
+}
+
+.legends span::before {
+    position: absolute;
+    top: 0.2rem;
+    left: 0;
+    content: '';
+    width: 0.8rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.legends span:nth-child(1)::before {
+    background-color: var(--c1);
+}
+
+.legends span:nth-child(2)::before {
+    background-color: var(--c2);
+}
+
+.legends span:nth-child(3)::before {
+    background-color: var(--c3);
+}
+
+.legends span:nth-child(4)::before {
+    background-color: var(--c4);
+}
+
+.texto__daora {
+    width: 90%; /* Alterado para melhor responsividade */
+    max-width: 600px; /* Limite de largura */
+    text-align: left;
+    margin: 2rem 0;
+}
+
+.texto__daora > h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.texto__daora > p {
+    font-size: 1.35rem;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .container_grafico {
+        flex-direction: column; /* Alterado para coluna em telas pequenas */
+    }
+
+    .texto__daora {
+        width: 100%; /* Largura total em telas pequenas */
+        margin-left: 0;
+    }
+}
+
+

@@ -4,13 +4,14 @@
 :root{
     /*======== Colors ========*/
     /*Color mode HSL(ahue, saturation, lightness)*/
-    --cor-primaria: #249E20;
-    --cor-secundaria: #599E1F;
-    --cor-terciaria: #8D9E20;
+    --cor-primaria: #026873;
+    --cor-secundaria: #025940;
+    --cor-terciaria: #03A64A;
+    --hover-primaria:#004e57;
     --cor-branca: white;
     --cor-preta: black;
-    --cor-titulo: darkgreen;
-    --texto-cor: rgb(4, 32, 1);
+    --cor-titulo: rgb(59, 158, 59);
+    --texto-cor: rgb(117, 131, 141);
     --cor-botao: #;
     --contain-cor: hsl(0, 0%, 100%);
     --body-cor: rgb(231, 248, 231);
@@ -41,16 +42,23 @@
 }
 
 body {
-    font-family: 'Opens-Sans';
-    background-color: var(--padrao-font);
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg , var(--cor-terciaria) , var(--cor-secundaria),  var(--cor-primaria));
     color: var(--texto-cor);
     padding: 0; /* Adicionado */
+    padding-top: 80px; /* altura da navbar */
 }
 
-img{
-    display: block;
-    max-width: 100%;
-    height: auto;
+h1{
+    font-family: var(--titulo-font);
+}
+
+h2{
+    font-family: var(--h2-font);
+}
+
+p{
+    font-family: var(--padrao-font);
 }
 /*==================== Header ====================*/
 header {
@@ -63,7 +71,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 10000;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(240, 239, 239, 0.6);
     backdrop-filter: blur(10px);
 }
 
@@ -121,7 +129,198 @@ li > a:hover::after{
 }
 
 /*==================== Banner ====================*/
+.banner {
+    background-image: url('../img/Sobre/banner_da_pg.png');
+    background-size: contain;  /* mostra a imagem inteira */
+    background-repeat: no-repeat; /* evita repetição */
+    background-position: center; /* centraliza a imagem */
+    width: 100%;
+    height: 80vh; /* altura ajustável */
+    position: relative;
+    margin-bottom: 20px;
+    background-color: #f8f8f8; /* cor de fundo neutra para preencher as faixas */
+}
 
-.banner_impressora{
+/*==================== Blocos Estilo FAQ ====================*/
+/*==================== Sobre ====================*/
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.texto {
+    flex: 1;
+    max-width: 325px;
+    padding: 20px;
+    line-height: 20px;
+    background-color: var(--body-cor);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.imagem_sobre img {
+    max-width: 325px;
+    width: 325px;
+    height: 233px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .sobre-container
+     {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imagem_sobre img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+/*==================== Nossa Empresa ====================*/
+.Nossa_Empresa_container_invertido {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    flex-direction: row-reverse;
+}
+
+.texto {
+    flex: 1;
+    max-width: 325px;
+    padding: 20px;
+    line-height: 20px;
+    background-color: var(--body-cor);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.Nossa_Empresa_imagem img {
+    max-width: 325px;
+    width: 325px;
+    height: 233px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .Nossa_Empresa_container_invertido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .Nossa_Empresa_imagem img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+}
+/*==================== Problema ====================*/
+.Problema-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.texto {
+    flex: 1;
+    max-width: 325px;
+    padding: 20px;
+    line-height: 20px;
+    background-color: var(--body-cor);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.Problema_imagem img {
+    max-width: 325px;
+    width: 325px;
+    height: 233px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .Problema-conteiner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img_Problema img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+}
+/*==================== Causa ====================*/
+#causa {
+    max-width: 325px;
+    padding: 20px;
+    line-height: 20px;
+    margin: 45px;
+    background-color: var(--body-cor);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    margin-top: 20px;
     
+
+    display: flex;
+    margin-left: auto; /* empurra o bloco para a direita */
+}
+/*==================== Solução/Nossa Ideia ====================*/
+#solucao {
+    max-width: 325px;
+    margin: 45px;
+    padding: 20px;
+    line-height: 20px;
+    background-color: var(--body-cor);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    margin-top: 20px;
+    text-align: left;
+    justify-items: left;
+
+    display: flex; 
+    margin-right: auto; /* empurra o bloco para a esquerda */
+}
+
+/*==================== explicacao ====================*/
+#explicacao {
+    max-width: 325px;
+    padding: 20px;
+    line-height: 20px;
+    margin: 45px;
+    background-color: var(--body-cor);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    margin-top: 20px;
+
+    display: flex;
+    margin-left: auto; /* empurra o bloco para a direita */
 }

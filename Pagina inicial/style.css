@@ -313,7 +313,7 @@ li > a:hover::after {
 #resumo__problema {
     width: 100%;
     height: auto; /* Alterado para auto para melhor responsividade */
-    background: var(--cor-primaria);
+    background: linear-gradient(135deg , var(--cor-terciaria) , var(--cor-secundaria),  var(--cor-primaria));
     text-align: center;
     color: white;
 }

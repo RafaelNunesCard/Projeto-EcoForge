@@ -159,7 +159,7 @@ li > a:hover::after{
 }
 
 .email{
-    width: 70%;
+    width: 90%;
     height: 10vh;
 
     position: relative;

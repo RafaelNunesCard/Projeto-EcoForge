@@ -183,15 +183,15 @@ li > a:hover::after {
 }
 
 #text__banner > h1{
-    font-size: 7rem;
-    margin-bottom: 0.7rem;
+    font-size: 4rem;
+    margin-bottom: 1rem;
     background: linear-gradient(to right, var(--cor-primaria) , var(--cor-secundaria));
     background-clip: text;
     color: transparent;
 }
 
 #text__banner > h2{
-    font-size: 4rem;
+    font-size: 3rem;
     padding-bottom: 4rem;
     margin-bottom: 5rem;
     background: linear-gradient(to left, var(--cor-terciaria) 60%, var(--cor-secundaria));
@@ -393,6 +393,10 @@ li > a:hover::after {
     margin-top: 15px;
     transition: 1s;
 }
+.text_problema button:hover{
+    background-color: var(--hover-primaria);
+    border: var(--hover-primaria);
+}
 
 .problema:hover .text_problema button {
     opacity: 1;
@@ -439,9 +443,94 @@ li > a:hover::after {
         grid-template-columns: repeat(3, 1fr); /* Três colunas em telas grandes */
     }
 }
+/*==================== Solução lixeira ====================*/
+#intro__lixeira{
+    height: 80vh;
+    text-align: center;
+}
+
+#intro__lixeira h1{
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+#titulo_lixeira{
+    background: linear-gradient(to left, var(--cor-primaria), var(--cor-secundaria), var(--cor-terciaria));
+    background-clip: text;
+}
+
+#container_lixeira{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#text_lixeira{
+    width: 50%;
+    margin: 3rem;
+    text-align: left;
+    font-size: 1.5rem;
+    padding: 7rem;
+}
+
+#text_lixeira p{
+    margin-bottom: 1rem;
+}
+
+#card_lixeira{
+    width: 600px;
+    height: 650px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #026873;
+}
+
+#card_lixeira img{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+#card_lixeira::after,#card_lixeira::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(
+        from var(--deg) at center,
+        rgb(10, 196, 124),
+        rgb(36, 187, 36),
+        rgb(20, 94, 190)
+    );
+    border-radius: inherit;
+    z-index: -2;
+    padding: 3px;
+    animation: autoRotate 2s linear infinite;
+}
+
+#card_lixeira::after{
+    filter: blur(20px);
+}
+
+@property --deg{
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+@keyframes autoRotate{
+    to{
+        --deg: 360deg;
+    }
+}
+
 /*==================== Avaliações ====================*/
 .avaliacoes{
-    height: 80vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -459,7 +548,7 @@ li > a:hover::after {
 .avaliacoes__titulo{
     font-size: var(--h2-font-size);
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 10rem;
     margin-bottom: 3rem;
 }
 
@@ -584,126 +673,78 @@ li > a:hover::after {
     }
 }
 
-/*==================== Graficos do lixo do mundo ====================*/
-
-
-#lixo__mundo {
-    height: auto; 
-    margin-top: 7rem;
-    text-align: center;
-    background-color: var(--cor-branca);
-}
-
-#lixo__mundo > h1 {
-    font-size: 3rem;
-    padding: 2rem 0;
-}
-
-#lixo__mundo > h2 {
-    font-size: 2.2rem;
-    margin: 2rem 0;
-}
-
-.container_grafico {
+/*==================== Redes Sociais ====================*/
+#social{
+    height: 70vh;
+    background: linear-gradient(135deg , var(--cor-terciaria) , var(--cor-secundaria),  var(--cor-primaria));
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 3rem 1rem;
+    gap: 4rem;
+    margin-top: 10rem;
 }
 
-.charts {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2rem;
+.card_social{
+    height: 450px;
+    width: 600px;
+    background: #f9f9f9;
+    border-radius: 20px;
 }
 
-.pie {
-    min-width: 295px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background:
-
-    radial-gradient(circle,
-        white 40%, 
-        transparent 0 70%, 
-        white 100%
-
-    ), 
-    conic-gradient(from 30deg, 
-        var(--c1) 40%, 
-        var(--c2) 0 65%, 
-        var(--c3) 0 85%, 
-        var(--c4) 0%
-
-    );
+.card_social img{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
 }
 
-.legends {
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: center;
-    flex-flow: wrap;
-    gap: 1rem;
+.text_social{
+    width: 700px;
+    margin: 2rem;
+    color: #e7e7e7;
+    font-size: 1.5rem;
+}
+ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5px 20px;
 }
 
-.legends span {
-    position: relative;
-    padding-inline-start: 1.25rem;
+.text_social h1,h2{
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
 }
 
-.legends span::before {
-    position: absolute;
-    top: 0.2rem;
-    left: 0;
-    content: '';
-    width: 0.8rem;
-    aspect-ratio: 1;
-    border-radius: 50%;
+.text_social h2{
+    font-size: 1.8rem;
 }
 
-.legends span:nth-child(1)::before {
-    background-color: var(--c1);
-}
-
-.legends span:nth-child(2)::before {
-    background-color: var(--c2);
-}
-
-.legends span:nth-child(3)::before {
-    background-color: var(--c3);
-}
-
-.legends span:nth-child(4)::before {
-    background-color: var(--c4);
-}
-
-.texto__daora {
-    width: 90%; /* Alterado para melhor responsividade */
-    max-width: 600px; /* Limite de largura */
-    text-align: left;
-    margin: 2rem 0;
-}
-
-.texto__daora > h2 {
-    font-size: 2rem;
+.text_social p,li{
     margin-bottom: 1rem;
 }
 
-.texto__daora > p {
-    font-size: 1.35rem;
+.social_midia{
+    display: flex;
+    gap: 37px;
+    margin-top: 20px;
 }
 
-/* Media Queries para Responsividade */
-@media (max-width: 768px) {
-    .container_grafico {
-        flex-direction: column; /* Alterado para coluna em telas pequenas */
-    }
-
-    .texto__daora {
-        width: 100%; /* Largura total em telas pequenas */
-        margin-left: 0;
-    }
+.redes{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    aspect-ratio: 1;
+    font-size: 1.9rem;
+    color: #7a7a7a;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    transition: color 0.5s ease-in-out;
 }
+
+.redes:hover{
+    color: var(--hover-primaria);
+}
+
 
 

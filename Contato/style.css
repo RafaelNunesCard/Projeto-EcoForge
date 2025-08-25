@@ -199,10 +199,10 @@ li > a:hover::after{
     font-size: 3rem;
     background-color: var(--cor-primaria);
     border-radius: 10px;
-    transition: 0.5s ease-in-out;
+    transition: all 0.3s linear;
 }
 .email:hover i{
-    visibility: hidden;
+    transform: scale(1.1);
 }
 
 #descri__email > h3{

@@ -43,10 +43,9 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg , var(--cor-terciaria) , var(--cor-secundaria),  var(--cor-primaria));
     color: var(--texto-cor);
-    padding: 0; 
-    padding-top: 80px; 
+    padding: 0; /* Adicionado */
+    padding-top: 80px; /* altura da navbar */
 }
 
 h1{
@@ -127,200 +126,254 @@ li > a:hover::after{
     height: 100px; /* Aumente a altura */
     border-radius: 50%;
 }
-
 /*==================== Banner ====================*/
 .banner {
     background-image: url('../img/Sobre/banner_da_pg.png');
-    background-size: cover;  /* mostra a imagem inteira */
-    background-repeat: no-repeat; /* evita repetição */
-    background-attachment: fixed;
+    background-size: contain;  
+    background-repeat: no-repeat; 
+    background-position: center; 
     width: 100%;
-    height: 60vh;
+    height: 80vh; 
     position: relative;
     margin-bottom: 20px;
-    background-color: #f8f8f8; /* cor de fundo neutra para preencher as faixas */
+    background-color: #f8f8f8; 
 }
 
-/*==================== Blocos Estilo FAQ ====================*/
 /*==================== Sobre ====================*/
-.sobre-container {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary: #026873;
+    --secondary: #025940;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: rgb(59, 158, 59);
+    --text: rgb(117, 131, 141);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: center;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    padding: 150px 0 100px;
+    margin-top: 25px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--hover-primaria); 
+}
+
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--primary);
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary);
+    margin: 15px auto 0;
+}
+
+.about-content, .problem-content, .cause-content, .solution-content, .work-content {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+    gap: 40px;
 }
 
-.texto {
+.about-text, .problem-text, .cause-text, .solution-text, .work-text {
     flex: 1;
-    max-width: 325px;
-    padding: 20px;
-    line-height: 20px;
-    background-color: var(--body-cor);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-width: 300px;
 }
 
-.imagem_sobre img {
-    max-width: 325px;
-    width: 325px;
-    height: 233px;
+.about-image, .problem-image, .cause-image, .solution-image, .work-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img, .problem-image img, .cause-image img, .solution-image img, .work-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.about-image:hover img, .problem-image:hover img, .cause-image:hover img, .solution-image:hover img, .work-image:hover img {
+    transform: scale(1.05);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    background-color: white;
+    border-radius: 10px;
+    width: 268px;
+    height: 357px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    width: 100%;
+    height: 250px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .sobre-container
-     {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .imagem_sobre img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-    }
+.team-info {
+    padding: 20px;
+    text-align: center;
 }
 
-/*==================== Nossa Empresa ====================*/
-.Nossa_Empresa_container_invertido {
+.team-info h3 {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.team-info p {
+    color: var(--secondary);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.social-links {
     display: flex;
-    align-items: center;
-    gap: 20px;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 15px;
 }
 
-.texto {
-    flex: 1;
-    max-width: 325px;
-    padding: 20px;
-    line-height: 20px;
-    background-color: var(--body-cor);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.social-links a {
+    color: var(--dark);
+    font-size: 1.2rem;
+    transition: color 0.3s;
 }
 
-.Nossa_Empresa_imagem img {
-    max-width: 325px;
-    width: 325px;
-    height: 233px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.social-links a:hover {
+    color: var(--secondary);
 }
 
-
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .Nossa_Empresa_container_invertido {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .Nossa_Empresa_imagem img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-    }
+footer {
+    background-color: var(--primary);
+    color: white;
+    padding: 50px 0 20px;
+    text-align: center;
 }
-/*==================== Problema ====================*/
-.Problema-container {
+
+.footer-content {
     display: flex;
-    align-items: center;
-    gap: 20px;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 30px;
 }
 
-.texto {
+.footer-column {
     flex: 1;
-    max-width: 325px;
-    padding: 20px;
-    line-height: 20px;
-    background-color: var(--body-cor);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-width: 250px;
 }
 
-.Problema_imagem img {
-    max-width: 325px;
-    width: 325px;
-    height: 233px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
 }
 
+.footer-column p, .footer-column a {
+    margin-bottom: 10px;
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .Problema-conteiner {
-        flex-direction: column;
-        text-align: center;
+.footer-column a:hover {
+    color: var(--secondary);
+}
+
+.copyright {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {         
+    .hero h1 {
+        font-size: 2.2rem;
     }
-
-    .img_Problema img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-    }
-}
-/*==================== Causa ====================*/
-#causa {
-    max-width: 325px;
-    padding: 20px;
-    line-height: 20px;
-    margin: 45px;
-    background-color: var(--body-cor);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    margin-top: 20px;
     
+    section {
+        padding: 60px 0;
+    }
+    
+    section h2 {
+        font-size: 2rem;
+    }
 
-    display: flex;
-    margin-left: auto; /* empurra o bloco para a direita */
-}
-/*==================== Solução/Nossa Ideia ====================*/
-#solucao {
-    max-width: 325px;
-    margin: 45px;
-    padding: 20px;
-    line-height: 20px;
-    background-color: var(--body-cor);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    margin-top: 20px;
-    text-align: left;
-    justify-items: left;
-
-    display: flex; 
-    margin-right: auto; /* empurra o bloco para a esquerda */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+    }
 }
 
-/*==================== explicacao ====================*/
-#explicacao {
-    max-width: 325px;
-    padding: 20px;
-    line-height: 20px;
-    margin: 45px;
-    background-color: var(--body-cor);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    margin-top: 20px;
-
-    display: flex;
-    margin-left: auto; /* empurra o bloco para a direita */
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* 1 coluna em telas ainda menores */
+    }
 }

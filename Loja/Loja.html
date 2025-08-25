@@ -1,44 +1,127 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--==================== RemixIcon ====================-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-
-    <!--==================== Swiper CSS ====================-->
-    <link rel="stylesheet" href="swiper-bundle.min.css">
-
-    <!--==================== CSS ====================-->
+    <title>Loja EcoForge</title>
+    <link rel="shortcut icon" href="../img/Icons/folha.ico" type="image/x-icon">
     <link rel="stylesheet" href="Loja.css">
-
-    <title>EcoForge</title>
 </head>
+
 <body>
     <header>
-        <div id="logo-headers"> 
+        <div id="logo-headers">
             <div class="logo"></div>
         </div>
         <nav>
             <ul>
-                <li><a href="../Pagina inicial/Index.html"><i class="ri-home-fill"></i> Inicio</a></li>
+                <li><a href="#"><i class="ri-home-fill"></i> Inicio</a></li>
                 <li><a href="../Sobre/Sobre.HTML"><i class="ri-building-2-fill"></i> Sobre nos</a></li>
-                <li><a href="#"><i class="ri-store-2-fill"></i> Loja</a></li>
+                <li><a href="../Loja/Loja.html"><i class="ri-store-2-fill"></i> Loja</a></li>
                 <li><a href="../Contato/PagContato.html"><i class="ri-customer-service-fill"></i> Contato</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <section id="">
-            
-        </section>
-        <section id="produtos">
-            
-        </section>
+        <div class="carousel-container">
+            <button class="nav-btn prev" onclick="previousCard()">‹</button>
+            <div class="product-card" onclick="setActive(0)">
+                <div class="card-background blue"></div>
+                <div class="card-content">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 80'%3E%3Cpath d='M10,50 Q30,25 60,30 Q90,35 110,28 L110,60 Q90,57 60,55 Q30,57 10,60 Z' fill='%232196f3'/%3E%3Cpath d='M15,48 Q35,28 65,33 Q95,38 105,31' stroke='%23ffffff' stroke-width='2' fill='none'/%3E%3Ccircle cx='20' cy='48' r='2' fill='%23ffffff'/%3E%3Ccircle cx='100' cy='33' r='2' fill='%23ffffff'/%3E%3C/svg%3E"
+                        alt="AirStride Nova" class="shoe-image">
+                    <h3 class="product-name">AirStride Nova</h3>
+                    <p class="product-price">$260</p>
+                    <div class="description-section">
+                        <h4 class="description-title">Description</h4>
+                        <p class="description-text">The AirStride Nova blends breathable mesh with a sleek, modern
+                            silhouette, designed for all-day comfort. Its enhanced sole offers superior support for
+                            daily wear, whether you're on the move or keeping it casual.</p>
+                        <button class="more-details-btn">More Details →</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card active" onclick="setActive(1)">
+                <div class="card-background yellow"></div>
+                <div class="card-content">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 80'%3E%3Cpath d='M10,50 Q30,25 60,30 Q90,35 110,28 L110,60 Q90,57 60,55 Q30,57 10,60 Z' fill='%23ff9800'/%3E%3Cpath d='M15,48 Q35,28 65,33 Q95,38 105,31' stroke='%23000000' stroke-width='2' fill='none'/%3E%3Cpath d='M18,45 Q38,30 68,35 Q98,40 108,33' stroke='%23ffffff' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='20' cy='48' r='2' fill='%23ff5722'/%3E%3Ccircle cx='100' cy='33' r='2' fill='%23000000'/%3E%3C/svg%3E"
+                        alt="PulseRunner XI" class="shoe-image">
+                    <h3 class="product-name">PulseRunner XI</h3>
+                    <p class="product-price">$490</p>
+                    <div class="description-section">
+                        <h4 class="description-title">Description</h4>
+                        <p class="description-text">Engineered for athletes, the PulseRunner XI features a responsive
+                            midsole, advanced grip technology, and a lightweight design. Perfect for running, training,
+                            or powering through your fitness routine.</p>
+                        <button class="more-details-btn">More Details →</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card" onclick="setActive(2)">
+                <div class="card-background green"></div>
+                <div class="card-content">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 80'%3E%3Cpath d='M10,50 Q30,25 60,30 Q90,35 110,28 L110,60 Q90,57 60,55 Q30,57 10,60 Z' fill='%234caf50'/%3E%3Cpath d='M15,48 Q35,28 65,33 Q95,38 105,31' stroke='%23ffffff' stroke-width='2' fill='none'/%3E%3Cpath d='M22,50 L28,46 M35,49 L41,45 M48,48 L54,44' stroke='%23ffffff' stroke-width='1.5'/%3E%3Ccircle cx='20' cy='48' r='2' fill='%23ffffff'/%3E%3Ccircle cx='100' cy='33' r='2' fill='%23ffffff'/%3E%3C/svg%3E"
+                        alt="RetroFlex 90s" class="shoe-image">
+                    <h3 class="product-name">RetroFlex 90s</h3>
+                    <p class="product-price">$790</p>
+                    <div class="description-section">
+                        <h4 class="description-title">Description</h4>
+                        <p class="description-text">Bring back the 90s with RetroFlex — a bold, throwback sneaker
+                            combining classic colorways and chunky soles. Style meets nostalgia in a silhouette that
+                            turns heads with every step.</p>
+                        <button class="more-details-btn">More Details →</button>
+                    </div>
+                </div>
+            </div>
+            <button class="nav-btn next" onclick="nextCard()">›</button>
+        </div>
+        <div class="social-icons">
+            <div class="social-icon linkedin">in</div>
+            <div class="social-icon facebook">f</div>
+            <div class="social-icon instagram">📷</div>
+        </div>
     </main>
     <footer>
-        
+
     </footer>
+
+    <script>
+        let activeIndex = 1; // Começa com o card do meio ativo
+        const cards = document.querySelectorAll('.product-card');
+
+        function setActive(index) {
+            // Remove active de todos os cards
+            cards.forEach(card => card.classList.remove('active'));
+
+            // Adiciona active no card selecionado
+            cards[index].classList.add('active');
+            activeIndex = index;
+        }
+
+        function nextCard() {
+            const nextIndex = (activeIndex + 1) % cards.length;
+            setActive(nextIndex);
+        }
+
+        function previousCard() {
+            const prevIndex = (activeIndex - 1 + cards.length) % cards.length;
+            setActive(prevIndex);
+        }
+
+        // Navegação por teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                previousCard();
+            } else if (e.key === 'ArrowRight') {
+                nextCard();
+            }
+        });
+
+        // Auto-play opcional (descomente para ativar)
+        // setInterval(nextCard, 3000);
+    </script>
 </body>
+
 </html>

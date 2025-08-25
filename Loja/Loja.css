@@ -60,7 +60,6 @@ img{
     max-width: 100%;
     height: auto;
 }
-
 /*==================== Header ====================*/
 header {
     position: fixed;
@@ -126,6 +125,7 @@ li > a:hover::after {
     height: 100px; 
     border-radius: 50%;
 }
+
 /*==================== Breakpoints ====================*/
 
 /* Para dispositivos pequenos */
@@ -147,37 +147,279 @@ li > a:hover::after {
     }
 }
 
-/* Para dispositivos médios */
-@media (min-width: 601px) and (max-width: 900px) {
-    li > a {
-        font-size: 1.5rem; /* Ajusta o tamanho da fonte */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-card {
+    width: 200px;
+    height: 250px;
+    background: #f0f0f0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card.active {
+    width: 320px;
+    height: 450px;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.product-card.active .card-background {
+    opacity: 1;
+}
+
+.card-background.blue {
+    background: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
+}
+
+.card-background.yellow {
+    background: linear-gradient(135deg, #ffa726 0%, #ff6f00 100%);
+}
+
+.card-background.green {
+    background: linear-gradient(135deg, #66bb6a 0%, #388e3c 100%);
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.shoe-image {
+    width: 120px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: all 0.4s ease;
+}
+
+.product-card.active .shoe-image {
+    width: 160px;
+    height: 100px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    transition: all 0.4s ease;
+}
+
+.product-card.active .product-name {
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.4s ease;
+}
+
+.product-card.active .product-price {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+}
+
+.description-section {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    text-align: left;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card.active .description-section {
+    opacity: 1;
+    max-height: 300px;
+}
+
+.description-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.description-text {
+    font-size: 13px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.more-details-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.product-card.active .more-details-btn {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.more-details-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    z-index: 20;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-btn.prev {
+    left: -60px;
+}
+
+.nav-btn.next {
+    right: -60px;
+}
+
+.social-icons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.social-icon:hover {
+    background: #555;
+    transform: translateY(-2px);
+}
+
+.social-icon.linkedin {
+    background: #0077b5;
+}
+
+.social-icon.facebook {
+    background: #1877f2;
+}
+
+.social-icon.instagram {
+    background: #e4405f;
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 350px;
+        gap: 15px;
+    }
+
+    .product-card {
+        width: 150px;
+        height: 200px;
+    }
+
+    .product-card.active {
+        width: 250px;
+        height: 320px;
+    }
+
+    .nav-btn.prev {
+        left: -50px;
+    }
+
+    .nav-btn.next {
+        right: -50px;
     }
 }
-
-/* Para dispositivos grandes */
-@media (min-width: 901px) {
-    /* Estilos padrão já definidos, caso necessário */
-}
-
-/*==================== Banner ====================*/
-.banner{
-    height: 90vh;
-    width: 100%;
-    background: url('https://pfst.cf2.poecdn.net/base/image/cac1ed063e8e4648fd17db09431855b6e0b63365b19b3924aaadd8f04983dc77?w=1024&h=768&pmaid=450378311') center/cover no-repeat fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.text_banner{
-    width: 300px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    perspective: 800px;
-}
-
-
-

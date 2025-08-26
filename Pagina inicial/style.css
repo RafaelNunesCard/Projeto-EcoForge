@@ -24,12 +24,6 @@
     --h2-font-zise: 1.45rem;
     --small-font-size: .813rem;
 
-    /*======== Cor Grafico ========*/
-
-    --c1: #249e20;
-    --c2: rgb(89, 92, 88);
-    --c3: #fc921f;
-    --c4: #389ca0;
 }
 
 /*==================== Tipografia Resposiva ====================*/
@@ -162,7 +156,7 @@ li > a:hover::after {
 /*==================== Banner Impactante ====================*/
 #banner__impactante{
     width: 100%;
-    height: 100vh;
+    height: 140vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -445,13 +439,13 @@ li > a:hover::after {
 }
 /*==================== Solução lixeira ====================*/
 #intro__lixeira{
-    height: 80vh;
+    height: 100vh;
     text-align: center;
 }
 
 #intro__lixeira h1{
     font-size: 2.8rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     margin-top: 2.5rem;
 }
 
@@ -470,7 +464,7 @@ li > a:hover::after {
     width: 50%;
     margin: 3rem;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 7rem;
 }
 
@@ -479,8 +473,9 @@ li > a:hover::after {
 }
 
 #card_lixeira{
-    width: 600px;
-    height: 650px;
+    width: 500px;
+    height: 550px;
+    margin-right: 4rem;
     position: relative;
     display: flex;
     justify-content: center;
@@ -675,18 +670,19 @@ li > a:hover::after {
 
 /*==================== Redes Sociais ====================*/
 #social{
-    height: 70vh;
+    height: 90vh;
     background: linear-gradient(135deg , var(--cor-terciaria) , var(--cor-secundaria),  var(--cor-primaria));
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
     margin-top: 10rem;
 }
 
 .card_social{
     height: 450px;
     width: 600px;
+    margin-left: 2rem;
     background: #f9f9f9;
     border-radius: 20px;
 }
@@ -797,6 +793,10 @@ ul{
     font-size: 14px;
     border-top: 1px solid #7f8c8d;
     padding-top: 20px;
+  }
+
+  .footer-column ul li a:hover {
+    color: #1abc9c;
   }
 
   .social-icons a {

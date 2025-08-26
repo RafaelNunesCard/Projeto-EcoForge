@@ -140,7 +140,7 @@ li>a:hover::after {
     justify-content: center;
 
     width: 100%;
-    height: 86vh;
+    height: 100vh;
     gap: 5rem;
 }
 
@@ -152,13 +152,13 @@ main {
 main > h1{
     text-align: center;
     font-size: 3rem;
-    margin-top: 10rem;
-    margin-bottom: 0;
+    margin-top: 9rem;
+    margin-bottom: 2rem;
     color: white;
 }
 
 .form_contato {
-    width: 450px;
+    width: 350px;
     position: relative;
     background-color: white;
     color: #002e33;
@@ -167,6 +167,7 @@ main > h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4rem;
 }
 
 @property --deg {
@@ -204,7 +205,7 @@ main > h1{
 }
 
 .form_contato img {
-    width: 96%;
+    width: 100%;
     height: 175px;
     border-radius: 10px;
 }
@@ -217,7 +218,7 @@ main > h1{
 
 .links {
     width: 96%;
-    height: 10vh;
+    height: 13vh;
 
     position: relative;
     margin-top: 1rem;
@@ -313,6 +314,10 @@ footer {
     font-size: 20px;
     transition: color 0.3s;
 }
+
+.footer-column ul li a:hover {
+    color: #1abc9c;
+  }
 
 .social-icons a:hover {
     color: #1abc9c;

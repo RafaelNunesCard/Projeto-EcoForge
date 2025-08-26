@@ -186,7 +186,7 @@ li > a:hover::after{
 
 .btn {
     display: inline-block;
-    background-color: var(--secondary);
+    background-color: var(--secondary); 
     color: white;
     padding: 12px 30px;
     border-radius: 5px;

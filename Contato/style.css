@@ -154,13 +154,13 @@ li > a:hover::after{
 }
 
 #text_contato > h1{
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 2rem;
 }
 
 .email{
-    width: 90%;
-    height: 10vh;
+    width: 100%;
+    height: 13vh;
 
     position: relative;
     margin-top: 1rem;
@@ -335,10 +335,12 @@ main{
         color: white;
         padding: 10px;
         width: 100%;
+        transition: all 0.3s linear;
     }
 
     .form button:hover{
         background-color: var(--hover-primaria);
+        transform: scale(1.1);
     }
 
     #comentario{

@@ -238,11 +238,13 @@ li>a:hover::after {
     color: #7a7a7a;
     background-color: #f9f9f9;
     border-radius: 50%;
-    transition: color 0.5s ease-in-out;
+    transition: all 0.3s linear;
+
 }
 
 .redes:hover {
     color: var(--cor-primaria);
+    transform: scale(1.1);
 }
 
 /*========================== Comentario ==========================*/

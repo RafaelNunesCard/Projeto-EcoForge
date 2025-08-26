@@ -120,39 +120,6 @@ li > a:hover::after {
     border-radius: 50%;
 }
 
-/*==================== Breakpoints ====================*/
-
-/* Para dispositivos pequenos */
-@media (max-width: 600px) {
-    nav > ul {
-        flex-direction: column; /* Muda para coluna em telas pequenas */
-        align-items: center; /* Centraliza os itens */
-        padding: 10px; /* Ajusta o padding */
-    }
-
-    li > a {
-        padding: 8px 15px; /* Reduz o padding em telas pequenas */
-        font-size: 1.2rem; /* Reduz o tamanho da fonte */
-    }
-
-    .logo {
-        width: 150px; /* Reduz a largura do logo */
-        height: 75px; /* Reduz a altura do logo */
-    }
-}
-
-/* Para dispositivos médios */
-@media (min-width: 601px) and (max-width: 900px) {
-    li > a {
-        font-size: 1.5rem; /* Ajusta o tamanho da fonte */
-    }
-}
-
-/* Para dispositivos grandes */
-@media (min-width: 901px) {
-    /* Estilos padrão já definidos, caso necessário */
-}
-
 /*==================== Banner Impactante ====================*/
 #banner__impactante{
     width: 100%;
@@ -256,25 +223,25 @@ li > a:hover::after {
 @media (max-width: 600px) {
     #Separador_do_texto,
     #Separador_da_imagem {
-        width: 100%; /* Largura total em telas pequenas */
-        height: auto; /* Altura automática */
+        width: 100%; 
+        height: auto; 
     }
 
     #text__banner > h1 {
-        font-size: 4rem; /* Reduzido para telas pequenas */
+        font-size: 4rem; 
     }
 
     #text__banner > h2 {
-        font-size: 2.5rem; /* Reduzido para telas pequenas */
+        font-size: 2.5rem; 
     }
 
     #part2__text__banner > h2 {
-        margin-left: 20px; /* Ajustado para centralização */
-        font-size: 1.5rem; /* Tamanho reduzido */
+        margin-left: 20px; 
+        font-size: 1.5rem; 
     }
 
     #part2__text__banner > p {
-        font-size: 1rem; /* Reduzido para telas pequenas */
+        font-size: 1rem; 
     }
 }
 
@@ -282,15 +249,15 @@ li > a:hover::after {
 @media (min-width: 601px) and (max-width: 900px) {
     #Separador_do_texto,
     #Separador_da_imagem {
-        width: 75%; /* Largura ajustada para telas médias */
+        width: 75%; 
     }
 
     #text__banner > h1 {
-        font-size: 5rem; /* Reduzido para telas médias */
+        font-size: 5rem; 
     }
 
     #text__banner > h2 {
-        font-size: 3rem; /* Reduzido para telas médias */
+        font-size: 3rem; 
     }
 }
 
@@ -298,7 +265,7 @@ li > a:hover::after {
 @media (min-width: 901px) {
     #Separador_do_texto,
     #Separador_da_imagem {
-        width: 50%; /* Largura padrão em telas grandes */
+        width: 50%; 
     }
 }
 
@@ -306,7 +273,7 @@ li > a:hover::after {
 /*==================== Resumo-dos-Problemas ====================*/
 #resumo__problema {
     width: 100%;
-    height: auto; /* Alterado para auto para melhor responsividade */
+    height: auto; 
     background: linear-gradient(135deg , var(--cor-terciaria) , var(--cor-secundaria),  var(--cor-primaria));
     text-align: center;
     color: white;
@@ -329,9 +296,9 @@ li > a:hover::after {
 
 .problema {
     text-align: left;
-    width: 100%; /* Alterado para 100% para responsividade */
-    max-width: 400px; /* Definido um limite máximo de largura */
-    height: auto; /* Alterado para auto */
+    width: 100%; 
+    max-width: 400px; 
+    height: auto; 
     padding: 40px;
     background: var(--cor-branca);
     color: black;
@@ -401,45 +368,45 @@ li > a:hover::after {
 /* Para dispositivos pequenos */
 @media (max-width: 600px) {
     #Problemas {
-        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
-        padding: 4rem 1rem; /* Ajuste de padding */
+        grid-template-columns: 1fr; 
+        padding: 4rem 1rem; 
     }
 
     .problema {
-        width: 90%; /* Largura maior em telas pequenas */
-        margin: 0 auto; /* Centraliza o card */
-        padding: 20px; /* Ajuste no padding */
+        width: 90%; 
+        margin: 0 auto; 
+        padding: 20px; 
     }
 
     .text_problema > h1 {
-        font-size: 1.5rem; /* Reduz tamanho do título */
+        font-size: 1.5rem; 
     }
 
     .text_problema > p {
-        font-size: 1rem; /* Reduz tamanho do texto */
+        font-size: 1rem; 
     }
 }
 
 /* Para dispositivos médios */
 @media (min-width: 601px) and (max-width: 900px) {
     #Problemas {
-        grid-template-columns: repeat(1, 1fr); /* Duas colunas em telas médias */
+        grid-template-columns: repeat(1, 1fr); 
     }
 
     .problema {
-        width: 80%; /* Largura maior em telas médias */
+        width: 80%; 
     }
 }
 
 /* Para dispositivos grandes */
 @media (min-width: 901px) {
     #Problemas {
-        grid-template-columns: repeat(3, 1fr); /* Três colunas em telas grandes */
+        grid-template-columns: repeat(3, 1fr); 
     }
 }
 /*==================== Solução lixeira ====================*/
 #intro__lixeira{
-    height: 100vh;
+    height: auto;
     text-align: center;
 }
 
@@ -744,6 +711,110 @@ ul{
     box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
     box-shadow: -10px -10px -10px white;
     transform: scale(1.1);
+}
+/*==================== Breakpoints ====================*/
+/*For small devices*/
+@media screen and (max-width: 600px){
+    header {
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 10px; 
+    }
+    
+    nav > ul {
+        gap: 10px; 
+        padding: 10px; 
+    }
+
+    li > a {
+        font-size: 1rem; 
+    }
+
+    .logo {
+        width: 100px; 
+        height: 40px; 
+    }
+
+    #banner__impactante{
+        height: 100vh;
+        flex-direction: column;
+        margin-top: 3.4rem;
+    }
+
+    #text__banner{
+        width: 90%;
+        text-align: center;
+        gap: 10px;
+    }
+
+    #part2__text__banner {
+        font-size: 1rem;
+        margin: 0 auto;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    #part2__text__banner > h2 {
+        margin-left: 0;
+        font-size: 1.5rem;
+    }
+    
+    #intro__lixeira h1{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+        
+        padding: 0;
+    }
+
+    #container_lixeira{
+        flex-direction: column;
+        height: auto;
+        padding: 5rem 0rem;
+        text-align: center;
+    }
+
+    #text_lixeira{
+        width: 90%;
+        margin: 2rem auto;
+        font-size: 1rem;
+        padding: 2rem;
+    }
+
+    .avaliacoes{
+        height: auto;
+        padding: 2rem 0rem;
+    }
+
+    #card_lixeira{
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    #social{
+        flex-direction: column;
+        height: auto;
+        padding: 5rem 0rem;
+        text-align: center;
+    }
+
+    .card_social{
+        width: 90%;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .text_social{
+        width: 90%;
+        margin: 2rem auto;
+        font-size: 1.2rem;
+    }
+
+    .social_midia{
+        justify-content: center;
+    }
+      
 }
 
 /*==================== Footer ====================*/
